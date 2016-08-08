@@ -1,6 +1,26 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
+
+ var bio = {
+   "name": "Huan Chen",
+   "role": "Forensic Engineer",
+   "welcomeMessage": "Welcome to my page",
+   "biopic": "",
+   "contacts": {
+     "email": "hchen.fred@gmail.com",
+     "mobile": "415-741-9464",
+     "github": "hchenfred",
+     "location": "San Francisco"
+   },
+   "skills": ["java", "knowledge-based AI", "software development process", "github"]
+ }
+
+var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").append(formattedHeaderName);
+var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").append(formattedHeaderRole);
+
 var work = {
   "jobs": [
     {
@@ -20,18 +40,35 @@ var work = {
   ]
 }
 
-for (job in work.jobs) {
-  $("#workExperience").append(HTMLworkStart);
-  var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-  var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-
-  var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-  $(".work-entry:last").append(formattedEmployerTitle);
-  var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-  $(".work-entry:last").append(formattedWorkDates);
-  var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-  $(".work-entry:last").append(formattedWorkDescription);
+function displayWork() {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
+    $(".work-entry:last").append(formattedEmployerTitle);
+    var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedWorkDates);
+    var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedWorkDescription);
+  }
 }
+
+displayWork();
+
+//add internationalizeButton
+$("#main").append(internationalizeButton);
+function inName(firstName, lastName) {
+  return firstName + " " + lastName.toUpperCase();
+}
+
+console.log(inName("Fred", "Chen"));
+
+$(document).click(function(loc) {
+  // your code goes here
+
+});
+
 
 var projects = {
   "projects": [
@@ -47,22 +84,28 @@ var projects = {
       "description": "This project is to design an Android App which sells tea and coffee and manages all of its customers.",
       "image": []
     }
-  ]
+  ],
 }
 
-var bio = {
-  "name": "Huan Chen",
-  "role": "Forensic Engineer",
-  "welcomeMessage": "Welcome to my page",
-  "biopic": "",
-  "contacts": {
-    "email": "hchen.fred@gmail.com",
-    "mobile": "415-741-9464",
-    "github": "hchenfred",
-    "location": "San Francisco"
-  },
-  "skills": ["java", "knowledge-based AI", "software development process", "github"]
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedProjectTitle);
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedProjectDates);
+    var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedProjectDescription);
+    var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
+    $(".project-entry:last").append(formattedProjectImage);
+  }
 }
+
+projects.display();
+
+$("#mapDiv").append(googleMap);
+
+
 
 var education = {
   "schools": [
