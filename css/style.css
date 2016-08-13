@@ -11,7 +11,8 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Lato', sans-serif;
+  /*font-family: "Roboto", sans-serif;*/
 }
 
 .clear-fix {
@@ -26,7 +27,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #2d3c49;
   line-height: 48px;
   display: inline;
 }
@@ -129,7 +130,7 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #1199c3;
 }
 
 .flex-box {
@@ -163,8 +164,15 @@ ul {
   display: none;
 }
 
-img {
-  padding: 10px;
+
+
+#projects img {
+  width: calc((50% - 60px)/2);
+  margin-right: 30px;
+}
+
+#projects img: last-of-type {
+  margin-right: 0;
 }
 
 span {
