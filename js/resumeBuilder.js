@@ -1,25 +1,38 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
  var bio = {
    "name": "Huan Chen",
-   "role": "Forensic Engineer",
-   "welcomeMessage": "Welcome to my page",
-   "biopic": "",
+   "role": "Senior Forensic Engineer",
+   "welcomeMessage": "Hello There",
+   "biopic": "/images/197x148.gif",
    "contacts": {
      "email": "hchen.fred@gmail.com",
      "mobile": "415-741-9464",
      "github": "hchenfred",
      "location": "San Francisco"
    },
-   "skills": ["java", "knowledge-based AI", "software development process", "github"]
- }
+   "skills": ["java", "knowledge-based AI", "software development process", "github"],
+   display: function() {
 
-var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").append(formattedHeaderName);
-var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").append(formattedHeaderRole);
+     var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
+     $("#header").prepend(formattedHeaderRole);
+     var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
+     $("#header").prepend(formattedHeaderName);
+     var formmattedContactsEmail = HTMLemail.replace("%data%", bio.contacts.email);
+     $("#topContacts").append(formmattedContactsEmail);
+     var formmattedContactsMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+     $("#topContacts").append(formmattedContactsMobile);
+     var formmattedContactsGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+     $("#topContacts").append(formmattedContactsGithub);
+     var formmattedContactsLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+     $("#topContacts").append(formmattedContactsLocation);
+   }
+ };
+
+bio.display();
+
+
+
+
+
 
 var work = {
   "jobs": [
@@ -99,7 +112,9 @@ projects.display = function() {
     var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].image);
     $(".project-entry:last").append(formattedProjectImage);
   }
-}
+};
+
+
 
 projects.display();
 
