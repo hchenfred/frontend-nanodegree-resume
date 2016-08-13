@@ -11,7 +11,6 @@
    },
    "skills": ["java", "knowledge-based AI", "software development process", "github"],
    display: function() {
-
      var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
      $("#header").prepend(formattedHeaderRole);
      var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
@@ -28,6 +27,64 @@
  };
 
 bio.display();
+
+
+var education = {
+  "schools": [
+    {
+      "name": "Georgia Institute of Technology",
+      "degree": "master",
+      "dates": "2016 - present",
+      "location": "Georgia, USA",
+      "url": "https://www.omscs.gatech.edu/",
+      "majors": ["Computer Science"]
+    },
+    {
+      "name": "University Of York",
+      "degree": "master",
+      "dates": "2009 - 2010 ",
+      "location": "York, UK",
+      "url": "http://www.york.ac.uk/electronics/postgraduate/taught_masters_degrees/msc_dse/",
+      "majors": ["Digital System Engineering"]
+    },
+    {
+      "name": "Tongji University",
+      "degree": "bachelor",
+      "dates": "2000 - 2005 ",
+      "location": "Shanghai, China",
+      "url": "http://www.tongji.edu.cn/english/",
+      "majors": ["Electronics"]
+    }
+  ],
+  "onlineCourses": [
+    {
+      "title": "Front-End Web Developer",
+      "school": "Udacity",
+      "dates": "2016 - present ",
+      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+    }
+  ],
+  display: function() {
+    for (var school in education.schools) {
+      console.log("enter here");
+      $("#education").append(HTMLschoolStart);
+      var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+      $(".education-entry:last").append(formattedSchoolName);
+      var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+      $(".education-entry:last").append(formattedSchoolDegree);
+      var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+      $(".education-entry:last").append(formattedSchoolDates);
+      var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+      $(".education-entry:last").append(formattedSchoolLocation);
+      for (var major in education.schools[school].majors) {
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+        $(".education-entry:last").append(formattedSchoolMajor);
+      }
+    }
+  }
+};
+
+education.display();
 
 
 
@@ -75,8 +132,6 @@ function inName(firstName, lastName) {
   return firstName + " " + lastName.toUpperCase();
 }
 
-console.log(inName("Fred", "Chen"));
-
 $(document).click(function(loc) {
   // your code goes here
 
@@ -119,32 +174,3 @@ projects.display = function() {
 projects.display();
 
 $("#mapDiv").append(googleMap);
-
-
-
-var education = {
-  "schools": [
-    {
-      "name": "University Of York",
-      "dates": "2009 - 2010",
-      "location": "York, UK",
-      "url": "",
-      "majors": ["Digital System Design"]
-    },
-    {
-      "name": "Tongji University",
-      "dates": "2000 - 2005",
-      "location": "Shanghai, China",
-      "url": "",
-      "majors": ["Electronics"]
-    }
-  ],
-  "onlineCourses": [
-    {
-      "title": "Front-End Web Developer",
-      "school": "Udacity",
-      "dates": "2016 - present",
-      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
-    }
-  ]
-}
