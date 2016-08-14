@@ -9,7 +9,7 @@ var bio = {
          "github": "hchenfred",
          "location": "San Francisco"
      },
-     "skills": ["java", "knowledge-based AI", "software development process", "github"],
+     "skills": ["java", "knowledge-based AI", "software development process", "github", "HTML/CSS", "jQuery"],
      display: function() {
          var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
          $("#header").prepend(formattedHeaderRole);
