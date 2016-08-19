@@ -1,67 +1,61 @@
-var bio = {
+ var bio = {
      "name": "Huan Chen",
      "role": "Senior Forensic Engineer",
-     "welcomeMessage": "Hello There",
-     "biopic": "images/biopic.JPG",
      "contacts": {
-         "email": "hchen.fred@gmail.com",
          "mobile": "415-741-9464",
+         "email": "hchen.fred@gmail.com",
          "github": "hchenfred",
          "location": "San Francisco"
      },
+     "welcomeMessage": "Hello There",
      "skills": ["java", "knowledge-based AI", "software development process", "github", "HTML/CSS", "jQuery"],
+     "biopic": "images/biopic.JPG",
      display: function() {
          var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
-         $("#header").prepend(formattedHeaderRole);
          var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
-         $("#header").prepend(formattedHeaderName);
+         $("#header").prepend(formattedHeaderName, formattedHeaderRole);
          var formmattedContactsEmail = HTMLemail.replace("%data%", bio.contacts.email);
-         $("#topContacts").append(formmattedContactsEmail);
          var formmattedContactsMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-         $("#topContacts").append(formmattedContactsMobile);
          var formmattedContactsGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-         formmattedContactsGithub = formmattedContactsGithub.replace("%url%", "https://hchenfred.github.io/frontend-nanodegree-resume/");
-         $("#topContacts").append(formmattedContactsGithub);
          var formmattedContactsLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-         $("#topContacts").append(formmattedContactsLocation);
+         $("#topContacts").append(formmattedContactsEmail, formmattedContactsMobile, formmattedContactsGithub, formmattedContactsLocation);
 
          var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-         $("#header").append(formattedBioPic);
          var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-         $("#header").append(formattedWelcomeMessage);
-         $("#header").append(HTMLskillsStart);
-         for (var skill in bio.skills) {
-             var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+         $("#header").append(formattedBioPic, formattedWelcomeMessage, HTMLskillsStart);
+         for (var i = 0; i < bio.skills.length; i++) {
+             var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
              $("#skills").append(formattedSkill);
          }
+
+         $("#footerContacts").append(formmattedContactsEmail, formmattedContactsMobile, formmattedContactsGithub, formmattedContactsLocation);
      }
  };
 
  bio.display();
 
-
  var education = {
      "schools": [{
          "name": "Georgia Institute of Technology",
-         "degree": "master",
-         "dates": "2016 - present",
          "location": "Georgia, USA",
-         "url": "https://www.omscs.gatech.edu/",
-         "majors": ["Computer Science"]
+         "degree": "master",
+         "majors": ["Computer Science"],
+         "dates": "2016 - present",
+         "url": "https://www.omscs.gatech.edu/"
      }, {
          "name": "University Of York",
-         "degree": "master",
-         "dates": "2009 - 2010 ",
          "location": "York, UK",
-         "url": "http://www.york.ac.uk/electronics/postgraduate/taught_masters_degrees/msc_dse/",
-         "majors": ["Digital System Engineering"]
+         "degree": "master",
+         "majors": ["Digital System Engineering"],
+         "dates": "2009 - 2010 ",
+         "url": "http://www.york.ac.uk/electronics/postgraduate/taught_masters_degrees/msc_dse/"
      }, {
          "name": "Tongji University",
-         "degree": "bachelor",
-         "dates": "2000 - 2005 ",
          "location": "Shanghai, China",
-         "url": "http://www.tongji.edu.cn/english/",
-         "majors": ["Electronics"]
+         "degree": "bachelor",
+         "majors": ["Electronics"],
+         "dates": "2000 - 2005 ",
+         "url": "http://www.tongji.edu.cn/english/"
      }],
      "onlineCourses": [{
          "title": "Front-End Web Developer",
@@ -70,34 +64,28 @@ var bio = {
          "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
      }],
      display: function() {
-         for (var school in education.schools) {
+         for (var i= 0; i < education.schools.length; i++) {
              $("#education").append(HTMLschoolStart);
-             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-             $(".education-entry:last").append(formattedSchoolName);
-             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-             $(".education-entry:last").append(formattedSchoolDegree);
-             var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-             $(".education-entry:last").append(formattedSchoolDates);
-             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-             $(".education-entry:last").append(formattedSchoolLocation);
-             for (var major in education.schools[school].majors) {
-                 var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors[major]);
+             var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
+             var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+             var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+             var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+             $(".education-entry:last").append(formattedSchoolName, formattedSchoolDegree, formattedSchoolDates, formattedSchoolLocation);
+             for (var majorIndex = 0;  majorIndex < education.schools[i].majors.length; majorIndex++) {
+                 var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors[majorIndex]);
                  $(".education-entry:last").append(formattedSchoolMajor);
              }
          }
 
          //online courses
          $("#education").append(HTMLonlineClasses);
-         for (var course in education.onlineCourses) {
+         for (var i = 0; i < education.onlineCourses.length; i++) {
              $("#education").append('<div class="education-entry"></div>');
-             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
-             $(".education-entry:last").append(formattedOnlineTitle);
-             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
-             $(".education-entry:last").append(formattedOnlineSchool);
-             var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
-             $(".education-entry:last").append(formattedOnlineDates);
-             var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
-             $(".education-entry:last").append(formattedOnlineURL);
+             var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
+             var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+             var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+             var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
+             $(".education-entry:last").append(formattedOnlineTitle, formattedOnlineSchool, formattedOnlineDates, formattedOnlineURL);
          }
      }
  };
@@ -119,67 +107,48 @@ var bio = {
          "description": "Test consumer products to make sure that they meet all requirements"
      }],
      display: function() {
-         for (job in work.jobs) {
+         for (var i = 0; i < work.jobs.length; i++) {
              $("#workExperience").append(HTMLworkStart);
-             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+             var formattedWorkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
              var formattedEmployerTitle = formattedWorkEmployer + formattedWorkTitle;
-             $(".work-entry:last").append(formattedEmployerTitle);
-             var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-             $(".work-entry:last").append(formattedWorkDates);
-             var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-             $(".work-entry:last").append(formattedWorkDescription);
+             var formattedWorkDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+             var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
+             $(".work-entry:last").append(formattedEmployerTitle, formattedWorkDates, formattedWorkDescription);
          }
      }
- }
+ };
 
  work.display();
 
  var projects = {
      "projects": [{
          "title": "Design an AI agent to solve Raven's Progressive Matrices",
-         "dates": 2016,
+         "dates": "2016",
          "description": "RPM (Raven’s Progressive Matrices) is a geometric problem used for intelligence test. The project is to design a knowledge-based AI agent that mimics human cognition to solve RPM problems.",
          "images": ["images/rpm1.png", "images/rpm2.png"]
      }, {
          "title": "Coffee and Tea Cart (Android App)",
-         "dates": 2016,
+         "dates": "2016",
          "description": "This project is to design an Android App which sells tea and coffee and manages all of its customers.",
-         "images": []
+         "images": ["images/android.png"]
      }],
      display: function() {
-         for (project in projects.projects) {
+         for (var i = 0; i < projects.projects.length; i++) {
              $("#projects").append(HTMLprojectStart);
-             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-             $(".project-entry:last").append(formattedProjectTitle);
-             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-             $(".project-entry:last").append(formattedProjectDates);
-             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-             $(".project-entry:last").append(formattedProjectDescription);
-             for (var image in projects.projects[project].images) {
-                 var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+             var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
+             var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+             var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+             $(".project-entry:last").append(formattedProjectTitle, formattedProjectDates, formattedProjectDescription);
+             for (var imageIndex = 0; imageIndex < projects.projects[i].images.length; imageIndex++) {
+                 var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[imageIndex]);
                  $(".project-entry:last").append(formattedProjectImage);
              }
-
          }
      }
- }
-
- projects.display();
-
- var displayFooter = function() {
-   var formmattedContactsEmail = HTMLemail.replace("%data%", bio.contacts.email);
-   $("#footerContacts").append(formmattedContactsEmail);
-   var formmattedContactsMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-   $("#footerContacts").append(formmattedContactsMobile);
-   var formmattedContactsGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-   formmattedContactsGithub = formmattedContactsGithub.replace("%url%", "https://hchenfred.github.io/frontend-nanodegree-resume/");
-   $("#footerContacts").append(formmattedContactsGithub);
-   var formmattedContactsLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-   $("#footerContacts").append(formmattedContactsLocation);
  };
 
- displayFooter();
+ projects.display();
 
  //add internationalizeButton
  $("#main").append(internationalizeButton);
