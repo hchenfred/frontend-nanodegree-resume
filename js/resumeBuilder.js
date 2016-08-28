@@ -1,14 +1,14 @@
 var bio = {
     "name": "Huan Chen",
-    "role": "Senior Forensic Engineer",
+    "role": "",
     "contacts": {
-        "mobile": "415-741-9464",
+        "mobile": "(415)-741-9464",
         "email": "hchen.fred@gmail.com",
-        "github": "hchenfred",
+        "github": "https://github.com/hchenfred",
         "location": "San Francisco"
     },
     "welcomeMessage": "Hello There",
-    "skills": ["java", "knowledge-based AI", "software development process", "github", "HTML/CSS", "jQuery"],
+    "skills": ["JavaScript", "HTML", "CSS", "jQuery", "GitHub"],
     "biopic": "images/biopic.JPG",
     display: function() {
         var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -58,7 +58,7 @@ var education = {
         "url": "http://www.tongji.edu.cn/english/"
     }],
     "onlineCourses": [{
-        "title": "Front-End Web Developer",
+        "title": "Front-End Nanodegree",
         "school": "Udacity",
         "dates": "2016 - present ",
         "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
