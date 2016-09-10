@@ -27,7 +27,7 @@ h6 {
 
 h1 {
     font-size: 40px;
-    color: #2d3c49;
+    color: #67bcdb;
     line-height: 48px;
     display: inline;
 }
@@ -84,7 +84,7 @@ p {
 }
 
 a {
-    color: #1199c3;
+    color: #ff7400;
     text-decoration: none;
     margin-top: 10px;
     display: block;
@@ -93,26 +93,26 @@ a {
 .welcome-message {
     font-style: italic;
     font-size: 18px;
-    color: #f3f3f3;
+    color: #000000;
     line-height: 28px;
 }
 
 #skills-h3 {
-    color: #f5ae23;
+    color: #9be0ea;
     display: none;
 }
 
 .orange {
-    background-color: #1199c3;
+    background-color: 0xffffff;
 }
 
 .orange-text {
-    color: #f5ae23;
+    color: #ff7400;
 }
 
 .white-text {
     font-weight: bold;
-    color: #fff;
+    color: #000000;
 }
 
 .gray {
@@ -122,12 +122,12 @@ a {
 }
 
 .dark-gray {
-    background-color: #4a4a4a;
+    background-color: 0;
 }
 
 /* TODO: Replace with image later */
 #header {
-    background-color: #1199c3;
+    background-color: #ffffff;
 }
 
 .flex-box {
@@ -152,6 +152,11 @@ a {
 
 ul {
     list-style-type: none;
+    color: #ff7400;
+}
+
+.flex-item {
+    color: #ff7400;
 }
 
 .biopic {
