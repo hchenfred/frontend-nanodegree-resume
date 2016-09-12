@@ -32,16 +32,22 @@ h1 {
     display: inline;
 }
 
+#name {
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    font-size: 50px;
+}
+
 h2 {
     font-weight: bold;
     font-size: 24px;
     color: #999;
     line-height: 29px;
     padding: 10px;
+    font-family: 'Lora', serif;
 }
 
 h3 {
-    font-style: italic;
     font-size: 20px;
     color: #000;
     line-height: 22px;
@@ -62,7 +68,6 @@ h5 {
 }
 
 .date-text {
-    font-style: italic;
     font-size: 14px;
     color: #999;
     line-height: 16px;
@@ -70,7 +75,6 @@ h5 {
 }
 
 .location-text {
-    font-style: italic;
     font-size: 14px;
     color: #999;
     line-height: 16px;
@@ -91,14 +95,13 @@ a {
 }
 
 .welcome-message {
-    font-style: italic;
     font-size: 18px;
     color: #000000;
     line-height: 28px;
 }
 
 #skills-h3 {
-    color: #9be0ea;
+    color: #67bcdb;
     display: none;
 }
 
