@@ -19,6 +19,10 @@ h6 {
     overflow: auto;
 }
 
+#main {
+    background-color: #f3f3f3;
+}
+
 .education-entry,
 .work-entry,
 .project-entry {
@@ -29,12 +33,11 @@ h1 {
     font-size: 40px;
     color: #67bcdb;
     line-height: 48px;
-    display: inline;
+    text-align: center;
 }
 
 #name {
     font-family: 'Dancing Script', cursive;
-    text-align: center;
     font-size: 50px;
 }
 
@@ -44,7 +47,7 @@ h2 {
     color: #999;
     line-height: 29px;
     padding: 10px;
-    font-family: 'Lora', serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 h3 {
@@ -129,8 +132,11 @@ a {
 }
 
 /* TODO: Replace with image later */
-#header {
-    background-color: #ffffff;
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .flex-box {
@@ -155,11 +161,15 @@ a {
 
 ul {
     list-style-type: none;
-    color: #ff7400;
+    color: #000000;
 }
 
 .flex-item {
     color: #ff7400;
+}
+
+.nav-item {
+    font-size: 15px;
 }
 
 .biopic {
@@ -186,6 +196,10 @@ span {
     text-align: center;
 }
 
+#footerContacts {
+    margin-left: 25%;
+    margin-right: 25%;
+}
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {

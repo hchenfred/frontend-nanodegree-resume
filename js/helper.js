@@ -16,15 +16,16 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span>%data%</span><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text">Mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text">Email</span><span class="white-text">%data%</span</li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text">Twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text">Github</span><span class="white-text">%data%</span></li>';
+//var HTMLmobile = '<li class="flex-item mobile"><span class="orange-text"></span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item nav-item"><a href="https://hchenfred.github.io/frontend-nanodegree-resume/"><i class="fa fa-phone-square fa-1x" aria-hidden="true"></i>%data%</a></li>';
+var HTMLemail = '<li class="flex-item nav-item"><a href="mailto:hchen.fred@gmail.com"><i class="fa fa-envelope fa-1x" aria-hidden="true"></i>%data%</a></li>';
+var HTMLtwitter = '<li class="flex-item nav-item"><span class="orange-text">Twitter</span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item nav-item"><a href="https://github.com/hchenfred"><i class="fa fa-github-square fa-1x" aria-hidden="true"></i>%data%</a></li>';
 //var HTMLgithub = '<li class="flex-item"><a class="orange-text" href=%data%>GitHub</a></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">Blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">Location</span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item nav-item"><span class="orange-text">Blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item nav-item"><a href="https://en.wikipedia.org/wiki/San_Francisco"><i class="fa fa-map-marker" aria-hidden="true"></i>%data%</a></li>';
 
-var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLbioPic = '<img src="%data%" class="biopic img-circle">';
 var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
 
 var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';

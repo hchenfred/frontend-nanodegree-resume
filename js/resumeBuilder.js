@@ -2,10 +2,10 @@ var bio = {
     "name": "Huan Chen",
     "role": "",
     "contacts": {
-        "mobile": "(415)-741-9464",
-        "email": "hchen.fred@gmail.com",
-        "github": "https://github.com/hchenfred",
-        "location": "San Francisco"
+        "mobile": " (415)-741-9464",
+        "email": " hchen.fred@gmail.com",
+        "github": "   https://github.com/hchenfred",
+        "location": " San Francisco"
     },
     "welcomeMessage": "Hello There",
     "skills": ["JavaScript", "HTML", "CSS", "jQuery", "GitHub"],
@@ -28,7 +28,7 @@ var bio = {
             $("#skills").append(formattedSkill);
         }
 
-        $("#footerContacts").append(formmattedContactsEmail, formmattedContactsMobile, formmattedContactsGithub, formmattedContactsLocation);
+        //$("#footerContacts").append(formmattedContactsEmail, formmattedContactsMobile, formmattedContactsGithub, formmattedContactsLocation);
     }
 };
 
@@ -123,7 +123,7 @@ work.display();
 
 var projects = {
     "projects": [{
-        "title": "Design an AI agent to solve Raven's Progressive Matrices",
+        "title": "Design an AI agent to solve Raven's Progressive Matrices (Java)",
         "dates": "2016",
         "description": "RPM (Raven’s Progressive Matrices) is a geometric problem used for intelligence test. The project is to design a knowledge-based AI agent that mimics human cognition to solve RPM problems.",
         "images": ["images/rpm1.png", "images/rpm2.png"]
